@@ -16,7 +16,7 @@ const char *observerInitial;
 - (void)dealloc {
 
     //[self.person removeObserver:self forKeyPath:@"FirstName"];
-    [self.project.employees removeObserver:self forKeyPath:@"count"];
+    [self.project removeObserver:self forKeyPath:@"employees"];
     //[self.employee removeObserver:self forKeyPath:@"self"];
 }
 
@@ -47,7 +47,7 @@ const char *observerInitial;
         self.project = project;
         self.employee = employee;
         
-        [self.project.employees addObserver:self forKeyPath:@"count" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial) context:&observerInitial];
+        [self.project addObserver:self forKeyPath:@"employees" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial) context:&observerInitial];
         //[self.employee addObserver:self forKeyPath:@"self" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial) context:&observerInitial];
     }
     return self;

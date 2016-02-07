@@ -99,7 +99,7 @@
     Employee *eExtraResource = [[Employee alloc] initWithName:@"eExtraResource" joiningDate:[NSDate date] releasedDate:nil];
     __unused Observer *obserber = [[Observer alloc] initWithProject:projectOne employee:eExtraResource];
     
-    [projectOne.employees addObject:eExtraResource];
+    //[projectOne.employees addObject:eExtraResource];
     
 }
 
