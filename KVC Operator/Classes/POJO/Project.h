@@ -15,6 +15,13 @@
 @property NSDate    *startDate;
 @property NSDate    *endDate;
 
-@property NSMutableArray <Employee *> *employees;
+//@property NSMutableArray <Employee *> *employees;
+@property (nonatomic, strong) NSMutableArray *employees;
+
+- (void)insertObject:(id)object inDataAtIndex:(NSUInteger)index;
+- (void)removeObjectFromDataAtIndex:(NSUInteger)index;
+- (id)objectInDataAtIndex:(NSUInteger)index;
+- (NSArray *)dataAtIndexes:(NSIndexSet *)indexes;
+- (NSUInteger)countOfData;
 
 @end

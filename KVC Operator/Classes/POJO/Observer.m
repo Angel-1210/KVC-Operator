@@ -7,6 +7,7 @@
 //
 
 #import "Observer.h"
+#import "MAKVONotificationCenter.h"
 
 const char *observerFirstName;
 const char *observerInitial;
@@ -16,8 +17,10 @@ const char *observerInitial;
 - (void)dealloc {
 
     //[self.person removeObserver:self forKeyPath:@"FirstName"];
-    [self.project removeObserver:self forKeyPath:@"employees"];
+    //[self.project.employees removeObserver:self forKeyPath:@"self"];
     //[self.employee removeObserver:self forKeyPath:@"self"];
+    
+    [self.project removeObserver:self forKeyPath:@"data" context:&observerInitial];
 }
 
 - (instancetype)init:(Person *)person {
@@ -47,11 +50,41 @@ const char *observerInitial;
         self.project = project;
         self.employee = employee;
         
-        [self.project addObserver:self forKeyPath:@"employees" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial) context:&observerInitial];
-        //[self.employee addObserver:self forKeyPath:@"self" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial) context:&observerInitial];
+        //[self.project addObserver:self forKeyPath:@"employees" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial) context:&observerInitial];
+        //[self.project.employees willChangeValueForKey:@"self"];
+        //[self.project.employees didChangeValueForKey:@"self"];
+        //[self.project.employees addObserver:self forKeyPath:@"@self" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionInitial) context:&observerInitial];
+        
+        /*[self.project addObserver:self keyPath:@"projectName" options:(NSKeyValueObservingOptionNew |NSKeyValueObservingOptionOld) block:^(MAKVONotification *notification) {
+            
+            NSLog(@"Old Value :- %@", notification.oldValue);
+            NSLog(@"Old Value :- %@", notification.newValue);
+        }];*/
+
+        [self.project addObserver:self
+                         forKeyPath:@"data"
+                            options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew)
+                            context:&observerInitial];
+        
+        
     }
     return self;
 }
+
+//-----------------------------------------------------------------------
+
+- (void)addEmployee:(Employee *)employee {
+    
+    [self.project insertObject:employee inDataAtIndex:0];
+}
+
+//-----------------------------------------------------------------------
+
+- (void)removeEmployee:(Employee *)employee {    
+    [self.project removeObjectFromDataAtIndex:0];
+}
+
+//-----------------------------------------------------------------------
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     

@@ -22,4 +22,7 @@
 
 - (instancetype)initWithProject:(Project *)project employee:(Employee *)employee;
 
+- (void)addEmployee:(Employee *)employee;
+- (void)removeEmployee:(Employee *)employee;
+
 @end

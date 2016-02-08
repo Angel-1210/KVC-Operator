@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F6505CF1C68F61300933D7A /* MAKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6505CE1C68F61300933D7A /* MAKVONotificationCenter.m */; };
 		1FB595E71C674CF800B68C6F /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB595E61C674CF800B68C6F /* Employee.m */; };
 		1FD28C1C1C650F92005A9812 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD28C1B1C650F92005A9812 /* main.m */; };
 		1FD28C251C650F92005A9812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD28C231C650F92005A9812 /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F6505CD1C68F61300933D7A /* MAKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKVONotificationCenter.h; sourceTree = "<group>"; };
+		1F6505CE1C68F61300933D7A /* MAKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKVONotificationCenter.m; sourceTree = "<group>"; };
 		1FB595E51C674CF800B68C6F /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
 		1FB595E61C674CF800B68C6F /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		1FD28C171C650F92005A9812 /* KVC Operator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KVC Operator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +122,8 @@
 		1FD28C3A1C650FF7005A9812 /* POJO */ = {
 			isa = PBXGroup;
 			children = (
+				1F6505CD1C68F61300933D7A /* MAKVONotificationCenter.h */,
+				1F6505CE1C68F61300933D7A /* MAKVONotificationCenter.m */,
 				1FD28C3B1C65100C005A9812 /* Person.h */,
 				1FD28C3C1C65100C005A9812 /* Person.m */,
 				1FD28C3E1C65177C005A9812 /* Project.h */,
@@ -203,6 +208,7 @@
 			files = (
 				1FD28C391C650FD4005A9812 /* ViewController.m in Sources */,
 				1FD28C381C650FD4005A9812 /* AppDelegate.m in Sources */,
+				1F6505CF1C68F61300933D7A /* MAKVONotificationCenter.m in Sources */,
 				1FD28C3D1C65100C005A9812 /* Person.m in Sources */,
 				1FD28C631C652C96005A9812 /* Observer.m in Sources */,
 				1FD28C401C65177C005A9812 /* Project.m in Sources */,
